@@ -43,6 +43,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Plomberie Archimède" }],
   creator: "Plomberie Archimède",
+  verification: {
+    google: "ahNSNs05R6whYtwJsoexxy84OUI1m4Xf60mAIi432xo",
+  },
   robots: {
     index: true,
     follow: true,
