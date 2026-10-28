@@ -27,6 +27,7 @@ export default function Navbar() {
   }, []);
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300 ${
         scrolled ? "shadow-md" : "shadow-sm"
@@ -147,5 +148,6 @@ export default function Navbar() {
           </a>
         </div>
       </div>
+    </>
   );
 }
