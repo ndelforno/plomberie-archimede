@@ -33,7 +33,7 @@ export async function sendContactEmail(
   try {
     await resend.emails.send({
       from: "Plomberie Archimède <contact@plomberie-archimede.fr>",
-      to: "papey06@me.com",
+      to: "plomberiearchimede@gmail.com",
       replyTo: email || undefined,
       subject: `${typeLabels[type] ?? type} — ${name}`,
       text: [
