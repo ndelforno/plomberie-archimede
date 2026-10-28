@@ -1,7 +1,7 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const PLACE_ID = "ChIJ8eRkzMz270kRFFL8muZnqwA";
@@ -105,6 +105,28 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
+const MAX_CHARS = 180;
+
+function ReviewText({ text }: { text: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const isLong = text.length > MAX_CHARS;
+
+  return (
+    <p className="text-slate-600 text-sm leading-relaxed flex-1">
+      {isLong && !expanded ? text.slice(0, MAX_CHARS).trimEnd() + "…" : text}
+      {isLong && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="ml-1 font-semibold hover:underline"
+          style={{ color: "#3bc9f5" }}
+        >
+          {expanded ? "Voir moins" : "Voir plus"}
+        </button>
+      )}
+    </p>
+  );
+}
+
 function Avatar({ name }: { name: string }) {
   const initials = name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
   const colors = ["#3bc9f5", "#b8762a", "#4a7fa8", "#6b8fa8", "#a07840"];
@@ -201,7 +223,7 @@ export default function GoogleReviews() {
 
                   <Stars rating={review.rating} />
 
-                  <p className="text-slate-600 text-sm leading-relaxed flex-1">{review.text}</p>
+                  <ReviewText text={review.text} />
 
                   <div className="flex items-center gap-1.5 pt-2 border-t border-slate-100">
                     <svg viewBox="0 0 24 24" className="w-4 h-4" aria-hidden="true">
