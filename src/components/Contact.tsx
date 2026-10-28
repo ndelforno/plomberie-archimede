@@ -1,43 +1,20 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { Phone, Mail, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { sendContactEmail, type ContactState } from "@/app/actions";
 
-// Replace FORMSPREE_FORM_ID with your Formspree form ID
-// 1. Go to https://formspree.io and create a free account
-// 2. Create a new form → copy the form ID (e.g. "xyzabcde")
-// 3. Replace the placeholder below
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/FORMSPREE_FORM_ID";
-
-type FormState = "idle" | "loading" | "success" | "error";
+const initialState: ContactState = { status: "idle" };
 
 export default function Contact() {
-  const [state, setState] = useState<FormState>("idle");
+  const [state, formAction, pending] = useActionState(sendContactEmail, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setState("loading");
-
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-
-      if (res.ok) {
-        setState("success");
-        form.reset();
-      } else {
-        setState("error");
-      }
-    } catch {
-      setState("error");
+  useEffect(() => {
+    if (state.status === "success") {
+      formRef.current?.reset();
     }
-  }
+  }, [state.status]);
 
   return (
     <section id="contact" className="py-24" style={{ backgroundColor: "#f0f7ff" }}>
@@ -83,7 +60,6 @@ export default function Contact() {
                 <p className="text-xs text-slate-400 font-semibold uppercase tracking-wide">
                   Téléphone
                 </p>
-                {/* TODO: Replace with real phone number */}
                 <p className="font-bold">06 85 28 65 20</p>
               </div>
             </a>
@@ -143,7 +119,6 @@ export default function Contact() {
               <p className="text-amber-100 text-sm mb-4">
                 Ne perdez pas une seconde — appelez directement, on arrive !
               </p>
-              {/* TODO: Replace with real phone number */}
               <a
                 href="tel:+33685286520"
                 className="inline-flex items-center gap-2 bg-white font-bold px-4 py-2.5 rounded-full text-sm hover:bg-red-50 transition-colors"
@@ -157,7 +132,7 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-3 bg-white rounded-3xl border-2 p-8 shadow-sm" style={{ borderColor: "#b8d8f8" }}>
-            {state === "success" ? (
+            {state.status === "success" ? (
               <div className="flex flex-col items-center justify-center h-full py-8 text-center">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
@@ -172,7 +147,7 @@ export default function Contact() {
                   On a bien reçu votre demande et on vous recontacte très vite !
                 </p>
                 <button
-                  onClick={() => setState("idle")}
+                  onClick={() => window.location.reload()}
                   className="font-semibold hover:underline text-sm"
                   style={{ color: "#3bc9f5" }}
                 >
@@ -180,7 +155,7 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form ref={formRef} action={formAction} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label
@@ -270,7 +245,7 @@ export default function Contact() {
                   />
                 </div>
 
-                {state === "error" && (
+                {state.status === "error" && (
                   <div className="flex items-center gap-2 text-red-700 bg-red-50 border border-red-200 rounded-2xl px-4 py-3 text-sm">
                     <AlertCircle size={16} className="flex-shrink-0" />
                     Une erreur s&apos;est produite. Veuillez réessayer ou nous appeler directement.
@@ -279,11 +254,11 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={state === "loading"}
+                  disabled={pending}
                   className="w-full flex items-center justify-center gap-2 text-white font-extrabold px-6 py-4 rounded-full transition-transform hover:scale-[1.02] disabled:opacity-60"
                   style={{ backgroundColor: "#b8762a" }}
                 >
-                  {state === "loading" ? (
+                  {pending ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       Envoi en cours…

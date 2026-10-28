@@ -8,11 +8,11 @@ const jsonLd = {
   name: "Plomberie Archimède",
   description:
     "Plombier professionnel à Valbonne et ses environs. Dépannage d'urgence 7j/7, installation sanitaire, rénovation salle de bain. Devis gratuit.",
-  url: "https://plomberie-archimede.vercel.app",
+  url: "https://plomberie-archimede.fr",
   telephone: "+33685286520",
   email: "plomberiearchimede@gmail.com",
-  image: "https://plomberie-archimede.vercel.app/images/logo.png",
-  logo: "https://plomberie-archimede.vercel.app/images/logo.png",
+  image: "https://plomberie-archimede.fr/images/logo.png",
+  logo: "https://plomberie-archimede.fr/images/logo.png",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Valbonne",

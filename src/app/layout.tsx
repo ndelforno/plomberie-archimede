@@ -14,7 +14,7 @@ const pacifico = Pacifico({
   weight: "400",
 });
 
-const siteUrl = "https://plomberie-archimede.vercel.app"; // update when custom domain is set
+const siteUrl = "https://plomberie-archimede.fr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
