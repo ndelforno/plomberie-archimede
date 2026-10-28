@@ -8,7 +8,6 @@ const services = [
     description:
       "Fuite d'eau, canalisation bouchée, dégât des eaux ? On rapplique dare-dare pour limiter les dégâts !",
     features: [
-      "Intervention rapide 7j/7",
       "Fuites et canalisations bouchées",
       "Dégâts des eaux",
       "Coupure d'eau d'urgence",
@@ -26,7 +25,6 @@ const services = [
       "Robinetterie et sanitaires",
       "Salles de bain clé en main",
       "Chauffe-eau et ballons",
-      "Entretien et maintenance",
     ],
   },
 ];

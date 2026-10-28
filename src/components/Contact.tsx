@@ -223,7 +223,6 @@ export default function Contact() {
                     <option value="">Sélectionnez…</option>
                     <option value="urgence">🚨 Urgence</option>
                     <option value="devis">📋 Demande de devis</option>
-                    <option value="entretien">🔧 Entretien / maintenance</option>
                     <option value="autre">💬 Autre</option>
                   </select>
                 </div>

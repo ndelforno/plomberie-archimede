@@ -26,7 +26,6 @@ export async function sendContactEmail(
   const typeLabels: Record<string, string> = {
     urgence: "🚨 Urgence",
     devis: "📋 Demande de devis",
-    entretien: "🔧 Entretien / maintenance",
     autre: "💬 Autre",
   };
 
