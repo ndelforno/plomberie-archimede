@@ -73,7 +73,7 @@ export default function Hero() {
         {/* Fun stats */}
         <div className="mt-16 flex flex-wrap justify-center gap-6 sm:gap-10">
           {[
-            { emoji: "⚡", value: "Urgences", label: "24h/24, 7j/7" },
+            { emoji: "⚡", value: "Urgences", label: "Intervention rapide" },
             { emoji: "💬", value: "Devis", label: "Gratuit & rapide" },
             { emoji: "✅", value: "Travaux", label: "Garantis" },
           ].map((stat) => (

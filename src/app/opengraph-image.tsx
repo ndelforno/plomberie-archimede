@@ -69,7 +69,7 @@ export default function OgImage() {
 
         {/* Services pills */}
         <div style={{ display: "flex", gap: "16px" }}>
-          {["🚨 Urgences 7j/7", "🔧 Plomberie générale", "📋 Devis gratuit"].map((s) => (
+          {["🚨 Urgences", "🔧 Plomberie générale", "📋 Devis gratuit"].map((s) => (
             <div
               key={s}
               style={{

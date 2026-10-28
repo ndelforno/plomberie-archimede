@@ -7,7 +7,7 @@ const jsonLd = {
   "@type": "Plumber",
   name: "Plomberie Archimède",
   description:
-    "Plombier professionnel à Valbonne et ses environs. Dépannage d'urgence 7j/7, installation sanitaire, rénovation salle de bain. Devis gratuit.",
+    "Plombier professionnel à Valbonne et ses environs. Dépannage d'urgence, installation sanitaire, rénovation salle de bain. Devis gratuit.",
   url: "https://plomberie-archimede.fr",
   telephone: "+33685286520",
   email: "plomberiearchimede@gmail.com",
@@ -39,7 +39,7 @@ const jsonLd = {
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       opens: "00:00",
       closes: "23:59",
-      description: "Urgences 24h/24 7j/7",
+      description: "Urgences plomberie",
     },
   ],
   hasOfferCatalog: {
@@ -52,7 +52,7 @@ const jsonLd = {
           "@type": "Service",
           name: "Dépannage d'urgence",
           description:
-            "Intervention rapide pour fuites d'eau, canalisations bouchées, dégâts des eaux. Disponible 7j/7.",
+            "Intervention rapide pour fuites d'eau, canalisations bouchées, dégâts des eaux.",
         },
       },
       {

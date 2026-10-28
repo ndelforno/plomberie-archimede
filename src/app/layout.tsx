@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Plomberie Archimède",
   },
   description:
-    "Plombier professionnel à Valbonne et ses environs (Sophia Antipolis, Antibes, Mougins, Grasse). Dépannage d'urgence 7j/7, installation, rénovation. Devis gratuit et sans engagement.",
+    "Plombier professionnel à Valbonne et ses environs (Sophia Antipolis, Antibes, Mougins, Grasse). Dépannage d'urgence, installation, rénovation. Devis gratuit et sans engagement.",
   keywords: [
     "plombier Valbonne",
     "plomberie Valbonne",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Plomberie Archimède — Le plombier des rois, le roi des plombiers",
     description:
-      "Plombier professionnel à Valbonne et ses environs. Dépannage d'urgence 7j/7, installation, rénovation. Devis gratuit.",
+      "Plombier professionnel à Valbonne et ses environs. Dépannage d'urgence, installation, rénovation. Devis gratuit.",
     url: siteUrl,
     siteName: "Plomberie Archimède",
     locale: "fr_FR",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Plomberie Archimède — Plombier à Valbonne",
-    description: "Dépannage d'urgence 7j/7, installation, rénovation. Devis gratuit.",
+    description: "Dépannage d'urgence, installation, rénovation. Devis gratuit.",
     images: ["/og-image.png"],
   },
 };
