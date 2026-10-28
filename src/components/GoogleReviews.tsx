@@ -73,10 +73,22 @@ const reviews = [
     time: "il y a 3 semaines",
     text: "⭐⭐⭐⭐⭐",
   },
+  {
+    author: "Pierre Bourguignon",
+    rating: 5,
+    time: "il y a 2 mois",
+    text: "C'est la deuxième fois que je fais appel à ce professionnel de la plomberie.\nRapidité, efficacité, prix correctes… et en plus il est sympa.\n\nPour mes travaux… ce sera toujours lui.",
+  },
+  {
+    author: "Gaelle Palandri",
+    rating: 5,
+    time: "il y a 4 mois",
+    text: "Jeremy est un artisan très sérieux, qui m'a accompagnée dans mon projet de rénovation d'une petite salle de bain. Il est de très bons conseils et a pris le temps de bien comprendre le projet pour m'aiguiller, même sur des sujets qui ne concernaient pas directement la salle de bain.\nLe défi était de taille étant donné qu'on était dans un vieil immeuble de 1789: les murs n'étaient pas droits et s'effritaient, l'ancienne plomberie semblait un peu douteuse... Mais lui et son équipe ont réussi à donner vie à mon projet !\nJe tiens aussi à souligner que c'est une personne très honnête, qui ne pousse pas à la consommation et est disponible. Je suis vraiment contente qu'on me l'ait conseillé (bouche-à-oreille), je le recommande vivement !",
+  },
 ];
 
 const overallRating = 5.0;
-const totalReviews = reviews.length;
+const totalReviews = 13;
 
 const reviewUrl = `https://search.google.com/local/writereview?placeid=${PLACE_ID}`;
 const allReviewsUrl = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`;
